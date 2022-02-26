@@ -1,13 +1,24 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <navegacion/>
+    <!--div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link>|
+      <router-link to="/Navegacion">navegacion</router-link>
     </div>
-    <router-view/>
+    <router-view/-->
+
   </div>
 </template>
-
+<script>
+import navegacion from './components/Navegacion.vue'
+export default {
+  components:{
+    navegacion,
+    
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
