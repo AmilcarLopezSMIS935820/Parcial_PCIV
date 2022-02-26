@@ -1,9 +1,8 @@
 <template>
-   <div class="p-3 bg-calc" style="max-width: 400px; margin: 50px auto">
-      <!-- Result Final -->
+   <div class="p-3 bg-calc" style="max-width: 400px; margin: 10px auto;">
+      <!-- Resultado Final -->
       <div
-         class="w-full rounded m-1 p-3 text-end lead font-weight-bold text-white bg-vue-dark"
-      >
+         class="w-full rounded m-1 p-3 text-end lead font-weight-bold text-white bg-vue-dark">
          {{ calculatorValue || 0 }}
       </div>
       <div class="row no-gutters">
@@ -64,24 +63,26 @@ export default {
    },
    methods: {
       action(n) {
-         //    Append Values
+         //    Agregar Valor
          if (!isNaN(n) || n === ".") {
             this.calculatorValue += n + "";
          }
-         //  Clear value
+         //  Limpiar valores
          if (n === "C") {
             this.calculatorValue = "";
          }
-         //  Archmetic Operator
+         //  Operaciones Aritmeticas
          if (["/", "+", "*", "-"].includes(n)) {
             this.operator = n;
             this.previousCalculatorValue = this.calculatorValue;
             this.calculatorValue = "";
          }
-         //  Percantage
+         //  Porcentaje
          if (n === "%") {
             this.calculatorValue = this.calculatorValue / 100 + "";
          }
+
+         // Resultado
          if (n === "=") {
             this.calculatorValue = eval(
                this.previousCalculatorValue +
